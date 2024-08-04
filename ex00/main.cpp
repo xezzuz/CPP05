@@ -6,13 +6,15 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:43:40 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/24 12:03:56 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/04 17:34:47 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int main() {
+
+
 	try {
 		Bureaucrat		b1("sidna", 1);
 
@@ -23,6 +25,7 @@ int main() {
 		std::cerr << err.what() << std::endl;
 	}
 	std::cout << "\n\n";
+
 
 	try {
 		Bureaucrat		b2("lbasha", 5);
@@ -35,7 +38,8 @@ int main() {
 		std::cerr << err.what() << std::endl;
 	}
 	std::cout << "\n\n";
-	
+
+
 	try {
 		Bureaucrat		b3("lmqddem", 151);
 
@@ -47,7 +51,8 @@ int main() {
 		std::cerr << err.what() << std::endl;
 	}
 	std::cout << "\n\n";
-	
+
+
 	try {
 		Bureaucrat		b4("sikiriti", 150);
 
@@ -58,6 +63,7 @@ int main() {
 	catch (std::exception& err) {
 		std::cerr << err.what() << std::endl;
 	}
+
 
 	return 0;
 }
