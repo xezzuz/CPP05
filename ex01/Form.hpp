@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:08:56 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/25 10:28:28 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/04 18:05:27 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
+// class Bureaucrat;
 
 class Form {
 	private:
@@ -30,10 +32,10 @@ class Form {
 		Form& operator=(const Form& original);
 		~Form();
 
-		std::string				getName();
-		bool					getIsSigned();
-		int						getSignGrade();
-		int						getExecuteGrade();
+		std::string				getName() const;
+		bool					getIsSigned() const;
+		int						getSignGrade() const;
+		int						getExecuteGrade() const;
 
 		void					beSigned(const Bureaucrat& toSign);
 

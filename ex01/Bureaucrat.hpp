@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:11:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/25 10:31:34 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/04 18:05:00 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Bureaucrat {
 		void			incrementGrade();
 		void			decrementGrade();
 
-		void			signForm(const Form& formToBeSigned);
+		void			signForm(Form& formToBeSigned);
 
 		class GradeTooHighException : public std::exception {
 			const char* what() const throw();
