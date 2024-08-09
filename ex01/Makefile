@@ -6,7 +6,7 @@
 #    By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/24 09:34:28 by nazouz            #+#    #+#              #
-#    Updated: 2024/07/25 10:33:04 by nazouz           ###   ########.fr        #
+#    Updated: 2024/08/04 18:25:26 by nazouz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPP				=			c++
 
 CPPFLAGS		=			-Wall -Wextra -Werror
 
-INCLUDES		=			Bureaucrat.hpp Form.cpp
+INCLUDES		=			Bureaucrat.hpp Form.hpp
 
 SRCS			=			main.cpp Bureaucrat.cpp Form.cpp
 

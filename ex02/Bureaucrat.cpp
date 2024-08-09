@@ -6,14 +6,15 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:15:23 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/05 17:53:24 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/05 17:42:39 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name(""), grade(0) {
-
+	
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade) {
@@ -73,7 +74,11 @@ void			Bureaucrat::decrementGrade() {
 	std::cout << "<grade decremented>\n";
 }
 
+void			Bureaucrat::signForm(AForm& formToBeSigned) {
+	formToBeSigned.beSigned(*this);
+}
+
 std::ostream&	operator<<(std::ostream& out, const Bureaucrat& toPrint) {
-	out << toPrint.getName() << ", bureaucrat grade " << toPrint.getGrade();
+	out << toPrint.getName() << ", bureaucrat grade " << toPrint.getGrade() << std::endl;
 	return out;
 }
