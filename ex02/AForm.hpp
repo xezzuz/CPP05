@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xezzuz <xezzuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:08:56 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/05 17:49:43 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/10 14:19:12 by xezzuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,17 @@ class AForm {
 
 		void					beSigned(const Bureaucrat& toSign);
 
+		virtual void			execute(Bureaucrat const & executor) const  = 0;
+
 		class GradeTooHighException : public std::exception {
 			const char* what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
+			const char* what() const throw();
+		};
+
+		class FormIsNotSignedException : public std::exception {
 			const char* what() const throw();
 		};
 };

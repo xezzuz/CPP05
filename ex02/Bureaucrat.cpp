@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xezzuz <xezzuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:15:23 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/05 17:42:39 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/10 14:47:04 by xezzuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,19 @@ void			Bureaucrat::decrementGrade() {
 
 void			Bureaucrat::signForm(AForm& formToBeSigned) {
 	formToBeSigned.beSigned(*this);
+}
+
+void			Bureaucrat::executeForm(AForm const & form) {
+	if (!form.getIsSigned()) {
+		std::cerr << this->name << " coudn't execute " << form.getName() << " because form isn't signed" << std::endl;	
+		throw AForm::FormIsNotSignedException();
+	}
+		
+	
+	if (this->grade > form.getExecuteGrade()) {
+		std::cerr << this->name << " coudn't execute " << form.getName() << " because of his grade" << std::endl ;
+		throw Bureaucrat::GradeTooLowException();
+	}
 }
 
 std::ostream&	operator<<(std::ostream& out, const Bureaucrat& toPrint) {
