@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xezzuz <xezzuz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:27:04 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/10 14:17:56 by xezzuz           ###   ########.fr       */
+/*   Updated: 2024/08/28 17:53:12 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,22 @@ AForm::AForm() : name(""), isSigned(false), signGrade(1), executeGrade(1) {
 
 AForm::AForm(const std::string name, const int signGrade, const int executeGrade)
 	: name(name), isSigned(false), signGrade(signGrade), executeGrade(executeGrade) {
-	std::cout << "AForm::Constructor Called\n";
+	// std::cout << "AForm::Constructor Called\n";
 }
 
 AForm::AForm(const AForm& original) : name(original.name), isSigned(original.isSigned), signGrade(original.signGrade), executeGrade(original.executeGrade) {
-	std::cout << "AForm::Copy Constructor Called\n";
+	// std::cout << "AForm::Copy Constructor Called\n";
 }
 
 AForm& AForm::operator=(const AForm& original) {
 	// what to copy?
 	this->isSigned = original.isSigned;
-	std::cout << "AForm::Copy Assignment Operator Called\n";
+	// std::cout << "AForm::Copy Assignment Operator Called\n";
 	return *this;
 }
 
 AForm::~AForm() {
-	std::cout << "~AForm::Destructor Called\n";
+	// std::cout << "~AForm::Destructor Called\n";
 }
 
 std::string				AForm::getName() const {
@@ -64,7 +64,7 @@ void					AForm::beSigned(const Bureaucrat& toSign) {
 		throw AForm::GradeTooLowException();
 	}
 	else {
-		std::cout << toSign.getName() << " signed " << this->name << ".\n";
+		std::cout << toSign.getName() << " signed " << this->name << "\n";
 		isSigned = true;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xezzuz <xezzuz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 17:39:37 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/10 14:39:55 by xezzuz           ###   ########.fr       */
+/*   Updated: 2024/08/28 16:48:22 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& ori
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& original) {
 	// const attributes
 	// can't copy any attributes
+	(void)original;
 	return *this;
 }
 

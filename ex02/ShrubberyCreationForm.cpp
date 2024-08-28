@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xezzuz <xezzuz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 17:37:06 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/10 14:19:37 by xezzuz           ###   ########.fr       */
+/*   Updated: 2024/08/28 16:47:52 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& origin
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& original) {
 	// const attributes
 	// can't copy any attributes
+	(void)original;
 	return *this;
 }
 
@@ -49,7 +50,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		exit(1);
 	}
 
-	for (int i; i < 5; i++) {
+	for (int i = 0; i < 5; i++) {
 		outfile <<	"         v" << std::endl;
 		outfile <<	"        >X<" << std::endl;
 		outfile <<	"         A" << std::endl;
