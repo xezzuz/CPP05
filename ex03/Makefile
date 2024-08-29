@@ -6,11 +6,11 @@
 #    By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/04 18:24:41 by nazouz            #+#    #+#              #
-#    Updated: 2024/08/28 18:59:08 by nazouz           ###   ########.fr        #
+#    Updated: 2024/08/29 12:06:16 by nazouz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			Bureaucrat
+NAME			=			Intern
 
 CPP				=			c++
 

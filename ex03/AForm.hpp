@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xezzuz <xezzuz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:08:56 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/10 14:19:12 by xezzuz           ###   ########.fr       */
+/*   Updated: 2024/08/29 12:10:27 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AForm {
 		AForm(const std::string name, const int signGrade, const int executeGrade);
 		AForm(const AForm& original);
 		AForm& operator=(const AForm& original);
-		~AForm();
+		virtual ~AForm();
 
 		std::string				getName() const;
 		bool					getIsSigned() const;
