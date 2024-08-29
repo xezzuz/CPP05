@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:27:04 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/05 19:52:02 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/29 17:04:36 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,19 @@ Form::Form() : name(""), isSigned(false), signGrade(1), executeGrade(1) {
 
 Form::Form(const std::string name, const int signGrade, const int executeGrade)
 	: name(name), isSigned(false), signGrade(signGrade), executeGrade(executeGrade) {
-		// MUST THROW AN EXCEPTION
+	if (signGrade < 1 || executeGrade < 1)
+		throw Form::GradeTooHighException();
+	else if (signGrade > 150 || executeGrade > 150)
+		throw Form::GradeTooLowException();
 	std::cout << "Form::Constructor Called\n";
 }
 
-Form::Form(const Form& original) : name(original.name), isSigned(original.isSigned), signGrade(original.signGrade), executeGrade(original.executeGrade) {
+Form::Form(const Form& original) 
+	: name(original.name), isSigned(original.isSigned), signGrade(original.signGrade), executeGrade(original.executeGrade) {
 	std::cout << "Form::Copy Constructor Called\n";
 }
 
 Form& Form::operator=(const Form& original) {
-	// what to copy?
 	this->isSigned = original.isSigned;
 	std::cout << "Form::Copy Assignment Operator Called\n";
 	return *this;
@@ -54,18 +57,18 @@ int						Form::getExecuteGrade() const {
 }
 
 void					Form::beSigned(const Bureaucrat& toSign) {
-	if (this->getIsSigned()) {
-		std::cout << this->name << " is already signed\n";
+	if (isSigned) {
+		std::cout << name << " is already signed\n";
 		return ;
 	}
 
 	if (toSign.getGrade() > signGrade) {
-		std::cout << toSign.getName() << " couldn't sign " << this->name
+		std::cout << toSign.getName() << " couldn't sign " << name
 				  << " because his grade is too low.\n";
 		throw Form::GradeTooLowException();
 	}
 	else {
-		std::cout << toSign.getName() << " signed " << this->name << ".\n";
+		std::cout << toSign.getName() << " signed " << name << ".\n";
 		isSigned = true;
 	}
 }
@@ -85,6 +88,6 @@ std::ostream&	operator<<(std::ostream& out, const Form& toPrint) {
 	else
 		std::cout << " is not signed. ";
 	std::cout << "Sign grade: " << toPrint.getSignGrade();
-	std::cout << ", Execution grade: " << toPrint.getExecuteGrade() << ".\n";
+	std::cout << ", Execution grade: " << toPrint.getExecuteGrade();
 	return out;
 }

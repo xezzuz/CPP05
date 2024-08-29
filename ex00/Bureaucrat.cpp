@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:15:23 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/05 17:53:24 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/29 16:38:58 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(g
 	else if (grade > 150) {
 		throw Bureaucrat::GradeTooLowException();
 	}
-	std::cout << "Constructor Called\n";
+	std::cout << "Bureaucrat::Constructor Called\n";
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat&	original) : name(original.name), grade(original.grade) {
@@ -38,7 +38,7 @@ Bureaucrat&		Bureaucrat::operator=(const Bureaucrat&		original) {
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "~Destructor Called\n";
+	std::cout << "Bureaucrat::~Destructor Called\n";
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {

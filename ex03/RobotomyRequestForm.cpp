@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 17:39:35 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/28 18:00:41 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/29 17:39:37 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& original) : 
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& original) {
-	// const attributes
-	// can't copy any attributes
-	(void)original;
+	target = original.target;
 	return *this;
 }
 
@@ -44,7 +42,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	if (!this->getIsSigned())
 		throw AForm::FormIsNotSignedException();
 
-	std::cout << "< DRILLING NOISES >" << std::endl;
+	std::cout << "<- DRILLING NOISES ->" << std::endl;
 	if (num % 2)
 		std::cout << this->target << " has been robotomized successfully" << std::endl;
 	else

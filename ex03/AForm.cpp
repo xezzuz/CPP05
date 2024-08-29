@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:27:04 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/28 17:53:12 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/29 17:45:24 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,20 @@ AForm::AForm() : name(""), isSigned(false), signGrade(1), executeGrade(1) {
 
 AForm::AForm(const std::string name, const int signGrade, const int executeGrade)
 	: name(name), isSigned(false), signGrade(signGrade), executeGrade(executeGrade) {
-	// std::cout << "AForm::Constructor Called\n";
+	
 }
 
 AForm::AForm(const AForm& original) : name(original.name), isSigned(original.isSigned), signGrade(original.signGrade), executeGrade(original.executeGrade) {
-	// std::cout << "AForm::Copy Constructor Called\n";
+	
 }
 
 AForm& AForm::operator=(const AForm& original) {
-	// what to copy?
 	this->isSigned = original.isSigned;
-	// std::cout << "AForm::Copy Assignment Operator Called\n";
 	return *this;
 }
 
 AForm::~AForm() {
-	// std::cout << "~AForm::Destructor Called\n";
+	
 }
 
 std::string				AForm::getName() const {
@@ -53,18 +51,18 @@ int						AForm::getExecuteGrade() const {
 }
 
 void					AForm::beSigned(const Bureaucrat& toSign) {
-	if (this->getIsSigned()) {
-		std::cout << this->name << " is already signed\n";
+	if (isSigned) {
+		std::cout << name << " is already signed\n";
 		return ;
 	}
 
 	if (toSign.getGrade() > signGrade) {
-		std::cout << toSign.getName() << " couldn't sign " << this->name
+		std::cout << toSign.getName() << " couldn't sign " << name
 				  << " because his grade is too low.\n";
 		throw AForm::GradeTooLowException();
 	}
 	else {
-		std::cout << toSign.getName() << " signed " << this->name << "\n";
+		std::cout << toSign.getName() << " signed " << name << "\n";
 		isSigned = true;
 	}
 }

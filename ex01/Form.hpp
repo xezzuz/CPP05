@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:08:56 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/04 18:05:27 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/29 16:52:37 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-// class Bureaucrat;
-
 class Form {
 	private:
 		const std::string		name;
 		bool					isSigned;
 		const int				signGrade;
 		const int				executeGrade;
-		
+
 	public:
 		Form();
 		Form(const std::string name, const int signGrade, const int executeGrade);

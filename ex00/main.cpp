@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 09:43:40 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/04 17:34:47 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/29 16:51:23 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main() {
 
-
+	std::cout << "<--------------- FIRST TEST --------------->" << std::endl;
 	try {
 		Bureaucrat		b1("sidna", 1);
 
@@ -24,9 +24,8 @@ int main() {
 	catch (std::exception& err) {
 		std::cerr << err.what() << std::endl;
 	}
-	std::cout << "\n\n";
 
-
+	std::cout << "\n<--------------- SECOND TEST --------------->" << std::endl;
 	try {
 		Bureaucrat		b2("lbasha", 5);
 
@@ -37,9 +36,8 @@ int main() {
 	catch (std::exception& err) {
 		std::cerr << err.what() << std::endl;
 	}
-	std::cout << "\n\n";
 
-
+	std::cout << "\n<--------------- THIRD TEST --------------->" << std::endl;
 	try {
 		Bureaucrat		b3("lmqddem", 151);
 
@@ -50,9 +48,8 @@ int main() {
 	catch (std::exception& err) {
 		std::cerr << err.what() << std::endl;
 	}
-	std::cout << "\n\n";
 
-
+	std::cout << "\n<--------------- FOURTH TEST --------------->" << std::endl;
 	try {
 		Bureaucrat		b4("sikiriti", 150);
 
@@ -63,7 +60,6 @@ int main() {
 	catch (std::exception& err) {
 		std::cerr << err.what() << std::endl;
 	}
-
 
 	return 0;
 }

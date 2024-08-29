@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 17:37:06 by nazouz            #+#    #+#             */
-/*   Updated: 2024/08/28 16:47:52 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/08/29 17:38:20 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() {
-	// should be private
+	
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string _target) : AForm("ShrubberryForm", 145, 137), target(_target) {
-
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string _target) : AForm("ShrubberyCreationForm", 145, 137), target(_target) {
+	
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& original) : AForm("ShrubberryForm", 145, 137), target(original.target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& original) : AForm("ShrubberyCreationForm", 145, 137), target(original.target) {
 	
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& original) {
-	// const attributes
-	// can't copy any attributes
-	(void)original;
+	target = original.target;
 	return *this;
 }
 
